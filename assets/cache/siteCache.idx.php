@@ -97,97 +97,12 @@ mm_widget_tags(\'keyw\',\',\'); // Give blog tag editing capabilities to the \'d
 </div> <!-- end of copyright wrapper -->
 
 </body>
-</html>';$c['ContactForm']='[!FormLister?
-&formid=`basic`
-&rules=`
-{
-    "name":{
-        "required":"Обязательно введите имя",
-        "matches":{
-            "params":"\\/^[\\\\pL\\\\s\\\\-\']++$\\/uD",
-            "message":"Введите имя правильно"
-        }
-    },
-    "email":{
-        "required":"Обязательно введите email",
-        "email":"Введите email правильно"
-    },
-    "subject":{
-        "required":"Обязательно введите тему сообщения",
-    },
-    "message":{
-        "required":"Обязательно введите сообщение",
-        "minLength":{
-            "params":10,
-            "message":"Сообщение должно быть не менее 10 символов"
-        }
-    }
-}`
-&formTpl=`@CODE:
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <div class="well">
-            <form class="form-horizontal" method="post">
-                <input type="hidden" name="formid" value="basic">
-                <div class="form-group[+name.errorClass+][+name.requiredClass+]">
-					<label for="name">Name:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="required input_field form-control" id="name" placeholder="Name" name="name" value="[+name.value+]">
-                        [+name.error+]
-                    </div>
-                </div>
-				<div class="cleaner_h10"></div>
-                <div class="form-group[+email.errorClass+][+email.requiredClass+]">
-                    <label for="email">Email:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="required input_field form-control" id="email" placeholder="Email" name="email" value="[+email.value+]">
-                        [+email.error+]
-                    </div>
-                </div>
-				<div class="cleaner_h10"></div>
-                <div class="form-group[+subject.errorClass+][+subject.requiredClass+]">
-                    <label for="subject">Subject:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="required input_field form-control" id="subject" name="subject" value="[+subject.value+]">
-                        [+subject.error+]
-                    </div>
-                </div>
-				<div class="cleaner_h10"></div>
-                <div class="form-group[+message.errorClass+][+message.requiredClass+]">
-                    <label for="message">Message:</label>
-                    <div class="col-sm-10">
-                        <textarea class="required form-control" id="message" placeholder="Your message" name="message" rows="10">[+message+]</textarea>
-                        [+message.error+]
-                    </div>
-                </div>
-				<div class="cleaner_h10"></div>
-                [+form.messages+]
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <input type="submit" class="submit_btn" value="Send">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>`
-&to=`zeeynnik@gmail.com`
-&ccSender=`1`
-&ccSenderField=`email`
-&ccSenderTpl=`@CODE:Спасибо за обращение, [+name.value+]`
-&reportTpl=`@CODE:
-<p>Имя: [+name.value+]</p>
-<p>Тема: [+subject.value+]</p>
-<p>Email: <a href="mailto:[+email.value+]">[+email.value+]</a></p>
-<p>Сообщение: [+message:strip_tags:nl2br+]</p>
-`
-&errorClass=` has-error`
-&requiredClass=` has-warning`
-&subject=`Новое сообщение`
-&messagesOuterTpl=`@CODE:<div class="alert alert-danger" role="alert">[+messages+]</div>`
-&errorTpl=`@CODE:<span class="help-block">[+message+]</span>`
-&debug=`1`
-!]';$c['Gallery']='                [!sgLister?
+</html>';$c['blog_image']='<div><h1><a href="[+url+]">[+pagetitle+]</a></h1>
+        <div class="image_wrapper fl_img">
+			<a href="[+url+]"><img src=" [[phpthumb? &input=`[+tv.image+]` &options=`w=100,h=100,zc=1,bg=FFFFFF`]]" alt="image" /></a>        			
+		</div>
+      <p>[+longtitle+]</p>
+	</div><!-- item ! -->';$c['Gallery']='                [!sgLister?
 				&ownerTPL=`@CODE: <div class="row">[+dl.wrap+]</div>`
 				&thumbSnippet=`sgThumb`
 				&thumbOptions=`400x300`
@@ -300,4 +215,4 @@ require MODX_BASE_PATH . \'assets/plugins/extrascheck/OutdatedExtrasCheck.plugin
  */
 if (!defined(\'MODX_BASE_PATH\')) { die(\'What are you doing? Get out of here!\'); }
 
-require(MODX_BASE_PATH."assets/plugins/tinymce4/plugin.tinymce.inc.php");';$p['TinyMCE4Props']='{"styleFormats_inline":"InlineTitle,cssClass1|InlineTitle2,cssClass2","styleFormats_block":"BlockTitle,cssClass3|BlockTitle2,cssClass4","entityEncoding":"named","pathOptions":"Site config","resizing":"false","webTheme":"webuser","webButtons1":"bold italic underline strikethrough removeformat alignleft aligncenter alignright","webButtons2":"link unlink image undo redo","webAlign":"ltr","width":"100%","height":"400px","introtextRte":"disabled","inlineMode":"disabled","inlineTheme":"inline","browser_spellcheck":"disabled","paste_as_text":"disabled"}';$p['TransAlias']='require MODX_BASE_PATH.\'assets/plugins/transalias/plugin.transalias.php\';';$p['TransAliasProps']='{"table_name":"russian","char_restrict":"lowercase alphanumeric","remove_periods":"No","word_separator":"dash"}';$p['Updater']='require MODX_BASE_PATH.\'assets/plugins/updater/plugin.updater.php\';';$p['UpdaterProps']='{"version":"evolution-cms\\/evolution","wdgVisibility":"All","showButton":"AdminOnly","type":"tags","branch":"develop","stableOnly":"true"}';$p['sgThumb']='require MODX_BASE_PATH.\'assets/plugins/simplegallery/plugin.sgthumb.php\';';$p['sgThumbProps']='{"tconfig":"See plugin code for details","keepOriginal":"No","originalFolder":"original"}';$p['SimpleGallery']='require MODX_BASE_PATH.\'assets/plugins/simplegallery/plugin.simplegallery.php\';';$p['SimpleGalleryProps']='{"tabName":"SimpleGallery","folder":"assets\\/galleries\\/","thumbsCache":"assets\\/.sgThumbs\\/","w":"140","h":"105","clientResize":"No","jpegQuality":"0.93","skipPHPThumb":"No","allowDuplicate":"No"}';$e=&$this->pluginEvent;$e['OnBeforeDocFormSave']=array('ManagerManager');$e['OnBeforeManagerLogin']=array('Forgot Manager Login');$e['OnBeforePluginFormSave']=array('FileSource');$e['OnBeforeSnipFormSave']=array('FileSource');$e['OnChunkFormRender']=array('CodeMirror');$e['OnDocDuplicate']=array('SimpleGallery','ManagerManager');$e['OnDocFormPrerender']=array('ManagerManager');$e['OnDocFormRender']=array('SimpleGallery','CodeMirror','ManagerManager');$e['OnDocFormSave']=array('ManagerManager');$e['OnEmptyTrash']=array('SimpleGallery');$e['OnFileBrowserUpload']=array('sgThumb');$e['OnInterfaceSettingsRender']=array('TinyMCE4');$e['OnLoadWebDocument']=array('TinyMCE4');$e['OnLoadWebPageCache']=array('TinyMCE4');$e['OnManagerAuthentication']=array('Forgot Manager Login');$e['OnManagerLoginFormRender']=array('Forgot Manager Login');$e['OnManagerWelcomeHome']=array('OutdatedExtrasCheck','Updater');$e['OnModFormRender']=array('CodeMirror');$e['OnPageNotFound']=array('Updater');$e['OnParseDocument']=array('TinyMCE4');$e['OnPluginFormPrerender']=array('FileSource');$e['OnPluginFormRender']=array('ManagerManager','CodeMirror','FileSource');$e['OnRichTextEditorInit']=array('TinyMCE4','CodeMirror');$e['OnRichTextEditorRegister']=array('TinyMCE4');$e['OnSiteRefresh']=array('Updater');$e['OnSnipFormPrerender']=array('FileSource');$e['OnSnipFormRender']=array('FileSource','CodeMirror');$e['OnStripAlias']=array('TransAlias');$e['OnTempFormRender']=array('CodeMirror');$e['OnTVFormRender']=array('ManagerManager');$e['OnWebPagePrerender']=array('TinyMCE4');
+require(MODX_BASE_PATH."assets/plugins/tinymce4/plugin.tinymce.inc.php");';$p['TinyMCE4Props']='{"styleFormats_inline":"InlineTitle,cssClass1|InlineTitle2,cssClass2","styleFormats_block":"BlockTitle,cssClass3|BlockTitle2,cssClass4","entityEncoding":"named","pathOptions":"Site config","resizing":"false","webTheme":"webuser","webButtons1":"bold italic underline strikethrough removeformat alignleft aligncenter alignright","webButtons2":"link unlink image undo redo","webAlign":"ltr","width":"100%","height":"400px","introtextRte":"disabled","inlineMode":"disabled","inlineTheme":"inline","browser_spellcheck":"disabled","paste_as_text":"disabled"}';$p['TransAlias']='require MODX_BASE_PATH.\'assets/plugins/transalias/plugin.transalias.php\';';$p['TransAliasProps']='{"table_name":"russian","char_restrict":"lowercase alphanumeric","remove_periods":"No","word_separator":"dash"}';$p['Updater']='require MODX_BASE_PATH.\'assets/plugins/updater/plugin.updater.php\';';$p['UpdaterProps']='{"version":"evolution-cms\\/evolution","wdgVisibility":"All","showButton":"AdminOnly","type":"tags","branch":"develop","stableOnly":"true"}';$p['sgThumb']='require MODX_BASE_PATH.\'assets/plugins/simplegallery/plugin.sgthumb.php\';';$p['sgThumbProps']='{"tconfig":"See plugin code for details","keepOriginal":"No","originalFolder":"original"}';$p['SimpleGallery']='require MODX_BASE_PATH.\'assets/plugins/simplegallery/plugin.simplegallery.php\';';$p['SimpleGalleryProps']='{"tabName":"SimpleGallery","templates":"\\u0413\\u0430\\u043b\\u0435\\u0440\\u0435\\u044f(6)","documents":"Gallery(3)","folder":"assets\\/images\\/","thumbsCache":"assets\\/.sgThumbs\\/","w":"140","h":"105","clientResize":"No","jpegQuality":"0.93","skipPHPThumb":"No","allowDuplicate":"No"}';$e=&$this->pluginEvent;$e['OnBeforeDocFormSave']=array('ManagerManager');$e['OnBeforeManagerLogin']=array('Forgot Manager Login');$e['OnBeforePluginFormSave']=array('FileSource');$e['OnBeforeSnipFormSave']=array('FileSource');$e['OnChunkFormRender']=array('CodeMirror');$e['OnDocDuplicate']=array('SimpleGallery','ManagerManager');$e['OnDocFormPrerender']=array('ManagerManager');$e['OnDocFormRender']=array('CodeMirror','ManagerManager','SimpleGallery');$e['OnDocFormSave']=array('ManagerManager');$e['OnEmptyTrash']=array('SimpleGallery');$e['OnFileBrowserUpload']=array('sgThumb');$e['OnInterfaceSettingsRender']=array('TinyMCE4');$e['OnLoadWebDocument']=array('TinyMCE4');$e['OnLoadWebPageCache']=array('TinyMCE4');$e['OnManagerAuthentication']=array('Forgot Manager Login');$e['OnManagerLoginFormRender']=array('Forgot Manager Login');$e['OnManagerWelcomeHome']=array('OutdatedExtrasCheck','Updater');$e['OnModFormRender']=array('CodeMirror');$e['OnPageNotFound']=array('Updater');$e['OnParseDocument']=array('TinyMCE4');$e['OnPluginFormPrerender']=array('FileSource');$e['OnPluginFormRender']=array('ManagerManager','CodeMirror','FileSource');$e['OnRichTextEditorInit']=array('TinyMCE4','CodeMirror');$e['OnRichTextEditorRegister']=array('TinyMCE4');$e['OnSiteRefresh']=array('Updater');$e['OnSnipFormPrerender']=array('FileSource');$e['OnSnipFormRender']=array('FileSource','CodeMirror');$e['OnStripAlias']=array('TransAlias');$e['OnTempFormRender']=array('CodeMirror');$e['OnTVFormRender']=array('ManagerManager');$e['OnWebPagePrerender']=array('TinyMCE4');
