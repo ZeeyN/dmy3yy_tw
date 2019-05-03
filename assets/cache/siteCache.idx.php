@@ -67,27 +67,7 @@ mm_widget_tags(\'keyw\',\',\'); // Give blog tag editing capabilities to the \'d
 //mm_hideTemplates(\'0,5,8,9,11,12\', \'2,3\');
 
 //mm_hideTabs(\'settings, access\', \'2\');
-';$c['footer']='<div id="templatemo_footer_wrapper">
-	<div id="templatemo_footer">
-    
-    	<div class="footer_box">
-        
-            <div class="footer_menu">
-            
-              <h3>About Us</h3>
-    			
-                <img src="theme/images/templatemo_image_04.jpg" alt="image" />
-                <p>Some text about the creator</p>
-                
-            </div>
-            
-        </div>
-        
-        <div class="cleaner"></div>
-    </div> <!-- end of footer -->
-</div> <!-- end of footer wrapper -->    
-
-<div id="templatemo_copyright_wrapper">
+';$c['footer']='<div id="templatemo_copyright_wrapper">
 	<div id="templatemo_copyright">
     
 		Copyright © 2048 <a href="#">Your Company Name</a>

@@ -65,26 +65,6 @@
 	
 	</div>
 </div> <!-- end of content_wrapper -->
-<div id="templatemo_footer_wrapper">
-	<div id="templatemo_footer">
-    
-    	<div class="footer_box">
-        
-            <div class="footer_menu">
-            
-              <h3>About Us</h3>
-    			
-                <img src="theme/images/templatemo_image_04.jpg" alt="image" />
-                <p>Some text about the creator</p>
-                
-            </div>
-            
-        </div>
-        
-        <div class="cleaner"></div>
-    </div> <!-- end of footer -->
-</div> <!-- end of footer wrapper -->    
-
 <div id="templatemo_copyright_wrapper">
 	<div id="templatemo_copyright">
     
